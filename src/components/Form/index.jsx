@@ -8,7 +8,7 @@ export function Form () {
 
   const handleOnSubmit = (evt) => {
     evt.preventDefault()
-    globalThis.fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=ccb4414a`)
+    globalThis.fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=ccb4414a`)
       .then(res => res.json())
       .then(response => setMovies(response.Search))
   }
