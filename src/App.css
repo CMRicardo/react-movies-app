@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  padding: 2rem;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url('./assets/wave-haikei.svg');
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
