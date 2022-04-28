@@ -1,0 +1,5 @@
+.movies-container {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,19 @@
+.search-form {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+}
+
+.search-bar {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: var(--rounded);
+  border: none;
+}
+
+.search-submit {
+  padding: 0.5rem 1rem;
+  border-radius: var(--rounded);
+  background-color: var(--accent);
+  color: var(--white);
+}
