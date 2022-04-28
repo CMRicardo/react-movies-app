@@ -2,7 +2,6 @@ import Movie from '../Movie'
 import './Movies.css'
 
 export function Movies ({ movies }) {
-  console.log({ movies })
   return (
     <ul className='movies-container'>
       {
