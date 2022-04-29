@@ -1,16 +1,16 @@
 import { useState } from 'react'
+import SearchIcon from '../icons/SearchIcon'
 import { Movies } from '../Movies'
+import { useSearch } from '../../hooks/useSearch'
 import './Form.css'
 
 export function Form () {
   const [searchValue, setSearchValue] = useState('')
   const [movies, setMovies] = useState([])
 
-  const handleOnSubmit = (evt) => {
+  const handleOnSubmit = async (evt) => {
     evt.preventDefault()
-    globalThis.fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=ccb4414a`)
-      .then(res => res.json())
-      .then(response => setMovies(response.Search))
+    setMovies(await useSearch({ keyword: searchValue }))
   }
   const handleOnChange = (evt) => {
     const value = evt.target.value
@@ -27,7 +27,10 @@ export function Form () {
           type='text'
           placeholder='Avengers...'
         />
-        <button className='search-submit'>Submit</button>
+        <button className='search-submit'>
+          <SearchIcon />
+          Submit
+        </button>
       </form>
       <Movies movies={movies} />
     </>

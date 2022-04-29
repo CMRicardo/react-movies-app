@@ -1,7 +1,13 @@
 .search-form {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  place-items: center;
+}
+
+.search-form label {
+  font-weight: bold;
 }
 
 .search-bar {
@@ -16,4 +22,14 @@
   border-radius: var(--rounded);
   background-color: var(--accent);
   color: var(--white);
+  display: flex;
+  place-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  transition: all .2s ease;
+}
+
+.search-submit:hover {
+  color: var(--accent);
+  background-color: var(--white);
 }
