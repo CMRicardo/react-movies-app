@@ -1,7 +1,5 @@
-export function useSearch ({ keyword }) {
-  return globalThis.fetch(`https://www.omdbapi.com/?s=${keyword}&apikey=${import.meta.env.VITE_API_KEY}`)
+export function useSearch ({ keyword, setMovies, pageNumber = 1 }) {
+  globalThis.fetch(`https://www.omdbapi.com/?s=${keyword}&page=${pageNumber}&apikey=${import.meta.env.VITE_API_KEY}`)
     .then(res => res.json())
-    .then(response => {
-      return response.Search
-    })
+    .then(response => setMovies(response.Search))
 }
