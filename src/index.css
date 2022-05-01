@@ -7,6 +7,7 @@
   --font-xl: 3rem;
   --font-normal: 1rem;
   --font-small: 0.9rem;
+  accent-color: var(--accent);
 }
 
 body {
