@@ -1,5 +1,5 @@
 import './Movie.css'
-export default function Movie ({ Title, Poster, Year }) {
+export function Movie ({ Title, Poster, Year }) {
   return (
     <li className='movie'>
       <h2>{Title}</h2>

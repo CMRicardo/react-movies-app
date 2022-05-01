@@ -2,10 +2,8 @@ import { useState } from 'react'
 
 import './Form.css'
 
-import { Movies } from '../Movies'
+import { Movies, Spinner, SearchIcon } from '../index'
 import { useSearch } from '../../hooks/useSearch'
-import SearchIcon from '../icons/SearchIcon'
-import Spinner from '../Spinner'
 
 export function Form () {
   const [searchValue, setSearchValue] = useState('')
