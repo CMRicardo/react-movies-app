@@ -10,6 +10,7 @@ export function Movies ({ movies }) {
           movies.map((movie) => {
             return (
               <Movie
+                id={movie.imdbID}
                 key={movie.imdbID}
                 Title={movie.Title}
                 Poster={movie.Poster}

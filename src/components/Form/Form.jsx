@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './Form.css'
 
 import { Movies, Spinner, SearchIcon } from '../index'
-import { useSearch } from '../../hooks/useSearch'
+import { useSearch } from '../../hooks'
 
 export function Form () {
   const [searchValue, setSearchValue] = useState('')
@@ -12,9 +12,7 @@ export function Form () {
 
   const handleOnSubmit = async (evt) => {
     evt.preventDefault()
-    setLoading(true)
-    useSearch({ keyword: searchValue, setMovies })
-    setLoading(false)
+    useSearch({ keyword: searchValue, setMovies, setLoading })
   }
   const handleOnChange = (evt) => {
     const value = evt.target.value
