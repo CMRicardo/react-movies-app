@@ -1,0 +1,29 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+}
+
+.nav-link {
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--rounded);
+  transition: all ease .2s;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background-color: var(--white);
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+}

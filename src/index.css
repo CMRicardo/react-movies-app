@@ -12,6 +12,7 @@
 
 body {
   margin: 0;
+  width: 100%;
   font-family: var(--font);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -48,4 +49,13 @@ h1 {
 
 img {
   width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--white);
 }
