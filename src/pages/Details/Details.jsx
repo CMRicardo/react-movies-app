@@ -1,13 +1,21 @@
 import { useContext } from 'react'
+import { Movie } from '../../components'
 import { MoviesContext } from '../../context'
 
 export function Details ({ params }) {
   const { movies } = useContext(MoviesContext)
-  console.log({ movies })
+  const [movieToUse] = movies.filter((movie) => movie.imdbID === params.id)
+
   return (
     <>
-      <h1>{params.id}</h1>
-      <h2>Hi</h2>
+      <div className='movies-container'>
+        <Movie
+          id={movieToUse.imdbID}
+          Poster={movieToUse.Poster}
+          Title={movieToUse.Title}
+          Year={movieToUse.Year}
+        />
+      </div>
     </>
   )
 }

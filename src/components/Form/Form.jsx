@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 import './Form.css'
 
 import { Movies, Spinner, SearchIcon } from '../index'
 import { useSearch } from '../../hooks'
+import { MoviesContext } from '../../context'
 
 export function Form () {
   const [searchValue, setSearchValue] = useState('')
-  const [movies, setMovies] = useState([])
+  const { movies, setMovies } = useContext(MoviesContext)
   const [loading, setLoading] = useState(false)
 
   const handleOnSubmit = async (evt) => {
