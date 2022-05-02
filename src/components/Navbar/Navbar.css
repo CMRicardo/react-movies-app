@@ -8,6 +8,7 @@
   color: var(--white);
   position: sticky;
   top: 0;
+  border-radius: var(--rounded);
 }
 
 .nav-link {

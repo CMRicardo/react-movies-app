@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import Helmet from 'react-helmet'
 import { Movie } from '../../components'
 import { MoviesContext } from '../../context'
 
@@ -8,6 +9,10 @@ export function Details ({ params }) {
 
   return (
     <>
+      <Helmet>
+        <title>Movies app | Details about {movieToUse.Title}</title>
+        <meta name='description' content={`Movie details about ${movieToUse.Title}`} />
+      </Helmet>
       <div className='movies-container'>
         <Movie
           id={movieToUse.imdbID}
