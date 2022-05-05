@@ -1,25 +1,27 @@
-import { useContext } from 'react'
-import Helmet from 'react-helmet'
-import { Movie } from '../../components'
-import { MoviesContext } from '../../context'
+import { useEffect, useState } from 'react'
+import { Movie, MovieDetails } from '../../components'
 
 export function Details ({ params }) {
-  const { movies } = useContext(MoviesContext)
-  const [movieToUse] = movies.filter((movie) => movie.imdbID === params.id)
+  const [singleMovie, setSingleMovie] = useState({})
+
+  useEffect(() => {
+    const API_KEY = import.meta.env.VITE_API_KEY
+    globalThis
+      .fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${params.id}`)
+      .then(res => res.json())
+      .then(setSingleMovie)
+  }, [params.id])
 
   return (
     <>
-      <Helmet>
-        <title>Movies app | Details about {movieToUse.Title}</title>
-        <meta name='description' content={`Movie details about ${movieToUse.Title}`} />
-      </Helmet>
       <div className='movies-container'>
         <Movie
-          id={movieToUse.imdbID}
-          Poster={movieToUse.Poster}
-          Title={movieToUse.Title}
-          Year={movieToUse.Year}
+          id={singleMovie.imdbID}
+          Poster={singleMovie.Poster}
+          Title={singleMovie.Title}
+          Year={singleMovie.Year}
         />
+        <MovieDetails {...singleMovie} />
       </div>
     </>
   )
