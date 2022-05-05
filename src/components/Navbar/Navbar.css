@@ -6,8 +6,6 @@
   padding: 0.5rem 1rem;
   background-color: var(--accent);
   color: var(--white);
-  position: sticky;
-  top: 0;
   border-radius: var(--rounded);
 }
 

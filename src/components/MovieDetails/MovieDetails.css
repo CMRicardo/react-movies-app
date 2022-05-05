@@ -1,0 +1,14 @@
+.movie-details{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  text-align: left;
+  background-color: var(--accent);
+  border-radius: var(--rounded);
+  padding: 1rem;
+  border: 1px solid #fff;
+}
+
+.movie-details label {
+  font-weight: bold;
+}
